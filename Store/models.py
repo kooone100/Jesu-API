@@ -1,7 +1,5 @@
 from django.db import models
 
-# Create your models here.
-
 
 # CUSTOMER PROFILE
 class Customers(models.Model):

@@ -3,7 +3,7 @@ from .models import Customers, Measurement
 
 
 class MeasurementAdmin(admin.ModelAdmin):
-    list_display = ('customer', 'title', 'len', 'waist', 'amount')
+    list_display = ('customer_full_name', 'title', 'len', 'waist', 'amount')
 
 
 admin.site.register(Measurement, MeasurementAdmin)

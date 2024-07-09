@@ -15,12 +15,11 @@ class CustomersSerializer(serializers.ModelSerializer):
 
 
 class MeasurementSerializer(serializers.ModelSerializer):
-    customer_full_name = serializers.CharField(source='customer.full_name', read_only=
-                                               True)
+    customer = serializers.PrimaryKeyRelatedField(queryset=Customers.objects.all())
 
     class Meta:
         model = Measurement
-        fields = ['id', 'customer', 'customer_full_name', 'title', 'len', 'waist', 'amount']
+        fields = ['id', 'customer', 'title', 'len', 'waist', 'amount']
 
     def __init__(self, *args, **kwargs):
         super(MeasurementSerializer, self).__init__(*args, **kwargs)
